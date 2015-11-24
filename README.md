@@ -4,6 +4,7 @@
 
 
 ```
+# lvremove /dev/system/test
 lvcreate -L 6G -n test system
 ```
 
