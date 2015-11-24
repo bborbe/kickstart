@@ -23,7 +23,7 @@ LC_CTYPE=C virt-install \
 --network=bridge:br0 \
 --disk=/dev/mapper/system-test \
 --noautoconsole \
---location='http://de.archive.ubuntu.com/ubuntu/dists/precise/main/installer-amd64/' \
+--location='http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/' \
 --nographics \
 --extra-args='ks=http://kickstart.benjamin-borbe.de/ks.cfg text console=tty0 utf8 console=ttyS0,115200'
 ```
