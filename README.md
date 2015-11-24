@@ -13,7 +13,6 @@ lvcreate -L 6G -n test system
 LC_CTYPE=C virt-install \
 --debug \
 --autostart \
---serial pty \
 --accelerate \
 --name=test \
 --ram=1024 \
@@ -22,8 +21,8 @@ LC_CTYPE=C virt-install \
 --os-variant=ubuntutrusty \
 --network=bridge:br0 \
 --disk=/dev/mapper/system-test \
---noautoconsole \
 --location='http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/' \
---nographics \
---extra-args='ks=http://kickstart.benjamin-borbe.de/ks.cfg text console=tty0 utf8 console=ttyS0,115200'
+--console pty,target_type=serial \
+--graphics none \
+--extra-args='ks=http://kickstart.benjamin-borbe.de/ks.cfg text console=tty0 utf8 console=ttyS0,115200n8 serial'
 ```
