@@ -1,14 +1,20 @@
 # Kickstart
 
-## Create LVM volume
+## Install via CD
 
+Press F6 Other Options
+Typ at beginning of "Boot Options"
+ks=https://kickstart.benjamin-borbe.de/ks.cfg
+
+## Install with virt-install
+
+### Create LVM volume
 
 ```
-# lvremove /dev/system/test
 lvcreate -L 6G -n test system
 ```
 
-## Install Ubuntu via Kickstart
+### Create VM
 
 ```
 LC_CTYPE=C virt-install \
@@ -25,13 +31,13 @@ LC_CTYPE=C virt-install \
 --location='http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/' \
 --console pty,target_type=serial \
 --graphics none \
---extra-args='ks=http://kickstart.benjamin-borbe.de/ks.cfg text console=tty0 utf8 console=ttyS0,115200n8 serial'
+--extra-args='ks=https://kickstart.benjamin-borbe.de/ks.cfg text console=tty0 utf8 console=ttyS0,115200n8 serial'
 ```
 
 ### Static Ip:
 
 ```
---extra-args= "ks=http://kickstart.benjamin-borbe.de/ks.cfg ksdevice=eth0 ip=10.10.21.76 netmask=255.255.255.240 dns=10.10.21.1 gateway=10.10.21.100"
+--extra-args="ks=https://kickstart.benjamin-borbe.de/ks.cfg ksdevice=eth0 ip=10.10.21.76 netmask=255.255.255.240 dns=10.10.21.1 gateway=10.10.21.100"
 ```
 
 ## Copyright and license
