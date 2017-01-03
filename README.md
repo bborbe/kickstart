@@ -4,7 +4,7 @@
 
 Press F6 Other Options
 Typ at beginning of "Boot Options"
-ks=https://kickstart.benjamin-borbe.de/ks.cfg
+ks=http://kickstart.benjamin-borbe.de/ks.cfg
 
 ## Install with virt-install
 
@@ -32,13 +32,13 @@ LC_CTYPE=C virt-install \
 --noautoconsole \
 --location='http://de.archive.ubuntu.com/ubuntu/dists/xenial/main/installer-amd64/' \
 --nographics \
---extra-args='ks=https://kickstart.benjamin-borbe.de/ks.cfg console=ttyS0,115200n8 serial'
+--extra-args='ks=http://kickstart.benjamin-borbe.de/ks.cfg console=ttyS0,115200n8 serial'
 ```
 
 ### Static Ip:
 
 ```
---extra-args="ks=https://kickstart.benjamin-borbe.de/ks.cfg ksdevice=eth0 ip=10.10.21.76 netmask=255.255.255.240 dns=10.10.21.1 gateway=10.10.21.100"
+--extra-args="ks=http://kickstart.benjamin-borbe.de/ks.cfg ksdevice=eth0 ip=10.10.21.76 netmask=255.255.255.240 dns=10.10.21.1 gateway=10.10.21.100"
 ```
 
 ## Copyright and license
