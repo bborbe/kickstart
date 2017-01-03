@@ -20,18 +20,19 @@ lvcreate -L 6G -n test system
 LC_CTYPE=C virt-install \
 --debug \
 --autostart \
+--serial pty \
 --accelerate \
 --name=test \
 --ram=1024 \
---vcpus=2 \
+--vcpus=1 \
 --os-type=linux \
---os-variant=ubuntutrusty \
+--os-variant=ubuntu16.04 \
 --network=bridge:br0 \
 --disk=/dev/mapper/system-test \
---location='http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/' \
---console pty,target_type=serial \
---graphics none \
---extra-args='ks=https://kickstart.benjamin-borbe.de/ks.cfg text console=tty0 utf8 console=ttyS0,115200n8 serial'
+--noautoconsole \
+--location='http://de.archive.ubuntu.com/ubuntu/dists/xenial/main/installer-amd64/' \
+--nographics \
+--extra-args='ks=https://kickstart.benjamin-borbe.de/ks.cfg console=ttyS0,115200n8 serial'
 ```
 
 ### Static Ip:
