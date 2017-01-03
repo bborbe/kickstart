@@ -3,7 +3,9 @@
 ## Install via CD
 
 Press F6 Other Options
+
 Typ at beginning of "Boot Options"
+
 ks=http://kickstart.benjamin-borbe.de/ks.cfg
 
 ## Install with virt-install
