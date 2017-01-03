@@ -6,15 +6,13 @@ Press F6 Other Options
 
 Typ at beginning of "Boot Options"
 
-ks=http://kickstart.benjamin-borbe.de/ks.cfg
+`ks=http://kickstart.benjamin-borbe.de/ks.cfg`
 
 ## Install with virt-install
 
 ### Create LVM volume
 
-```
-lvcreate -L 6G -n test system
-```
+`lvcreate -L 6G -n test system`
 
 ### Create VM
 
